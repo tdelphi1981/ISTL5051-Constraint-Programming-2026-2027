@@ -1,0 +1,2 @@
+Table demo, allowed (color1, color2) pairs: [(0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1)]
+color1 fixed to R; color2 narrows to ['G', 'B']

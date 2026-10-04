@@ -1,0 +1,1 @@
+Cumulative demo, durations=[3, 2, 2], demands=[2, 3, 2], capacity=4: start times = [2, 0, 2]

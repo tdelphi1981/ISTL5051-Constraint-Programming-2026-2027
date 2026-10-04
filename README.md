@@ -13,6 +13,7 @@ Materials are added every week. Each week is pinned by a `weekNN` tag; select a 
 | Week | Topic | Lecture Notes | Slides | Lab | Code |
 |---|---|---|---|---|---|
 | 1 | Constraint Satisfaction Problems: A Formal Definition | [PDF](lecture-notes/Week01_Constraint_Satisfaction_Problems.pdf) | [Slides](slides/Week01_Constraint_Satisfaction_Problems.pdf) | [Lab](labs/Lab01_Constraint_Satisfaction_Problems.pdf) | [Code](kod_ornekleri/hafta01) |
+| 2 | Constraint Propagation | [PDF](lecture-notes/Week02_Constraint_Propagation.pdf) | [Slides](slides/Week02_Constraint_Propagation.pdf) | [Lab](labs/Lab02_Constraint_Propagation.pdf) | [Code](kod_ornekleri/hafta02) |
 
 ## Folders
 

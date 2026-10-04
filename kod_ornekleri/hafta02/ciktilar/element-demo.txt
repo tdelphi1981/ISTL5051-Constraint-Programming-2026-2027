@@ -1,0 +1,3 @@
+Element demo, menu prices=[10, 25, 40, 15]
+index domain before target >= 20: [0, 1, 2, 3]
+index domain after target >= 20: [1, 2]

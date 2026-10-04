@@ -1,0 +1,3 @@
+Domains before AC-3: X=[1, 2, 3], Y=[1, 2, 3], Z=[1, 2, 3]
+Arc-consistent: True
+Domains after AC-3 (fixpoint): X=[1], Y=[2], Z=[3]

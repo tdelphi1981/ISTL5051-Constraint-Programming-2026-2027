@@ -1,0 +1,6 @@
+N=8 propagation-strength comparison
+strong (AllDifferent): status=OPTIMAL branches=475 conflicts=9 wall_time=0.0021s
+weak (pairwise !=): status=OPTIMAL branches=518 conflicts=0 wall_time=0.0027s
+N=20 propagation-strength comparison
+strong (AllDifferent): status=OPTIMAL branches=3312 conflicts=51 wall_time=0.0090s
+weak (pairwise !=): status=OPTIMAL branches=3940 conflicts=26 wall_time=0.0201s
