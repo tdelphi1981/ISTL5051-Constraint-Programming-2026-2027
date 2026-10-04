@@ -6,7 +6,7 @@ Karadeniz Technical University | Faculty of Science, Department of Computer Scie
 
 Instructor: Assoc. Prof. Tolga Berber
 
-Materials are added every week. Each week is pinned by a `weekNN` tag; select a tag to see the content up to that week only.
+Materials are added every week. Each week's first release is pinned by a `weekNN` tag. Later corrections are committed to the main branch as `Correction:` commits; always use the main branch for the latest materials.
 
 ## Weekly Plan
 
