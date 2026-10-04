@@ -1,0 +1,2 @@
+Status: OPTIMAL
+Assignment: {'S': 2, 'E': 7, 'N': 6, 'D': 4, 'M': 5, 'O': 3, 'R': 1, 'Y': 0}

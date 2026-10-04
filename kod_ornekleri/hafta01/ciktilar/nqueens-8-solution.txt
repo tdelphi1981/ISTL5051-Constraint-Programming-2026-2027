@@ -1,0 +1,2 @@
+Status: OPTIMAL
+Columns per row (0-indexed) for N=8: [2, 5, 7, 0, 3, 6, 4, 1]

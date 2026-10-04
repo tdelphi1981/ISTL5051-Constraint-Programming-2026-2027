@@ -1,0 +1,4 @@
+ortools==9.14.6206
+minizinc==0.10.0
+pytest==9.1.1
+gurobipy==12.0.3

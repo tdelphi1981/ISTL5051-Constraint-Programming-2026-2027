@@ -1,0 +1,1 @@
+Number of solutions for N=6: 4

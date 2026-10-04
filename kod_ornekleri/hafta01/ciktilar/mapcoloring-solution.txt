@@ -1,0 +1,8 @@
+Status: OPTIMAL
+WA: Green
+NT: Red
+SA: Blue
+Q: Green
+NSW: Red
+V: Green
+T: Red

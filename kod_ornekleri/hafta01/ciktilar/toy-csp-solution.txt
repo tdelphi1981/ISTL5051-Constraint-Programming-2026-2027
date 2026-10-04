@@ -1,0 +1,2 @@
+Status: OPTIMAL
+Assignment: region_a=2, region_b=1, region_c=0
