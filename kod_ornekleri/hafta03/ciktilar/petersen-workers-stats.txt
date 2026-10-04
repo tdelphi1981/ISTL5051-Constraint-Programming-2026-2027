@@ -1,0 +1,11 @@
+num_search_workers=1
+Status: OPTIMAL
+NumBranches: 69
+NumConflicts: 1
+WallTime: 0.0008
+
+num_search_workers=8
+Status: OPTIMAL
+NumBranches: 69
+NumConflicts: 1
+WallTime: 0.0024

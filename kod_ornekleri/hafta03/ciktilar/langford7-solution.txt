@@ -1,0 +1,5 @@
+Status: OPTIMAL
+NumBranches: 564
+NumConflicts: 21
+WallTime: 0.0020
+Sequence: [4, 1, 6, 1, 7, 4, 3, 5, 2, 6, 3, 2, 7, 5]
