@@ -1,0 +1,3 @@
+Status: OPTIMAL
+Optimal length for 8 marks: 34
+Marks: [0, 1, 4, 9, 15, 22, 32, 34]

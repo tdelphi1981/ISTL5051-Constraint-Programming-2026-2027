@@ -1,0 +1,3 @@
+num_search_workers=1        wall_time=0.1707s  length=44  status=OPTIMAL
+num_search_workers=8        wall_time=0.0443s  length=44  status=OPTIMAL
+speed-up (1-worker time / 8-worker time): 3.86x

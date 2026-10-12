@@ -1,0 +1,1 @@
+Solved N=2000: 0 conflicts remaining after 1288 steps.
