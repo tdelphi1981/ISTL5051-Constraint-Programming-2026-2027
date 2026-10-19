@@ -1,0 +1,3 @@
+Cutset variable eliminated first: A
+Elimination order: ['A', 'B', 'D', 'E', 'C']
+Induced width: 3

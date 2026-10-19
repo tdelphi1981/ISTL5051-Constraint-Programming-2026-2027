@@ -1,0 +1,4 @@
+Status: OPTIMAL
+NumBranches: 599
+NumConflicts: 0
+WallTime: 0.005082

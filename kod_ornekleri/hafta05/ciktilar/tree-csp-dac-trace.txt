@@ -1,0 +1,12 @@
+Initial domains: {'R1': [0, 1, 2], 'R2': [0, 1, 2], 'R3': [0, 1, 2], 'R4': [0, 1, 2], 'R5': [0, 1, 2]}
+Revise R2 against R5: domains[R2] = [0, 1, 2]
+Revise R2 against R4: domains[R2] = [0, 1, 2]
+Revise R1 against R3: domains[R1] = [0, 1, 2]
+Revise R1 against R2: domains[R1] = [0, 1, 2]
+Assign R1 = Red
+Assign R2 = Green
+Assign R3 = Green
+Assign R4 = Red
+Assign R5 = Red
+Backtracks needed: 0
+CP-SAT cross-check status: OPTIMAL, valid coloring: True
