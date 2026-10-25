@@ -1,0 +1,5 @@
+solver,time_ms,objective
+Gecode,126.18,13
+COIN-BC,224.03,13
+HiGHS,229.57,13
+Gurobi,NA,NA

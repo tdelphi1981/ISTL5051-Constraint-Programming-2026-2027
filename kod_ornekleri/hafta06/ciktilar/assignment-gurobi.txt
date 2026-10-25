@@ -1,0 +1,11 @@
+$ minizinc --solver Gurobi --statistics assignment.mzn assignment.dzn
+% Generated FlatZinc statistics:
+%%%mzn-stat: paths=0
+%%%mzn-stat: flatIntVars=25
+%%%mzn-stat: flatIntConstraints=17
+%%%mzn-stat: method="minimize"
+%%%mzn-stat: flatTime=0.0731452
+%%%mzn-stat-end
+Error: error:   MIPGurobiWrapper runtime error:  No Gurobi license found (user tolgaberber, host Tolga-M3-MacBook-Pro.local, hostid 5f3bca5c, cores 16)
+Message from caller: Could not open GUROBI environment.
+exit code: 1

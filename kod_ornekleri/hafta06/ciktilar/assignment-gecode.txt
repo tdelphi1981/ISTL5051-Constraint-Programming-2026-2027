@@ -1,0 +1,25 @@
+$ minizinc --solver Gecode --statistics assignment.mzn assignment.dzn
+% Generated FlatZinc statistics:
+%%%mzn-stat: paths=0
+%%%mzn-stat: flatIntVars=9
+%%%mzn-stat: flatIntConstraints=6
+%%%mzn-stat: method="minimize"
+%%%mzn-stat: flatTime=0.0655491
+%%%mzn-stat-end
+assignment: [2, 1, 3, 4]
+total cost: 13
+----------
+==========
+%%%mzn-stat: initTime=0.000215584
+%%%mzn-stat: solveTime=5e-05
+%%%mzn-stat: solutions=5
+%%%mzn-stat: variables=9
+%%%mzn-stat: propagators=6
+%%%mzn-stat: propagations=86
+%%%mzn-stat: nodes=13
+%%%mzn-stat: failures=2
+%%%mzn-stat: restarts=0
+%%%mzn-stat: peakDepth=3
+%%%mzn-stat-end
+%%%mzn-stat: nSolutions=1
+%%%mzn-stat-end

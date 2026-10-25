@@ -17,6 +17,7 @@ Materials are added every week. Each week's first release is pinned by a `weekNN
 | 3 | Search I: Systematic Search | [PDF](lecture-notes/Week03_Search_I.pdf) | [Slides](slides/Week03_Search_I.pdf) | [Lab](labs/Lab03_Search_I.pdf) | [Code](kod_ornekleri/hafta03) |
 | 4 | Search II: Local Search, Restarts and Learning | [PDF](lecture-notes/Week04_Search_II.pdf) | [Slides](slides/Week04_Search_II.pdf) | [Lab](labs/Lab04_Search_II.pdf) | [Code](kod_ornekleri/hafta04) |
 | 5 | Tractable Structure and Symmetry | [PDF](lecture-notes/Week05_Tractable_Structure_and_Symmetry.pdf) | [Slides](slides/Week05_Tractable_Structure_and_Symmetry.pdf) | [Lab](labs/Lab05_Tractable_Structure_and_Symmetry.pdf) | [Code](kod_ornekleri/hafta05) |
+| 6 | Modeling Languages I: MiniZinc and Solver Independence | [PDF](lecture-notes/Week06_Modeling_Languages_I.pdf) | [Slides](slides/Week06_Modeling_Languages_I.pdf) | [Lab](labs/Lab06_Modeling_Languages_I.pdf) | [Code](kod_ornekleri/hafta06) |
 
 ## Folders
 

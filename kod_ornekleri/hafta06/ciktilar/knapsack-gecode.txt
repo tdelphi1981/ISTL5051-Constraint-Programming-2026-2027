@@ -1,0 +1,4 @@
+selected items: [false, true, true, false]
+total value: 9
+----------
+==========

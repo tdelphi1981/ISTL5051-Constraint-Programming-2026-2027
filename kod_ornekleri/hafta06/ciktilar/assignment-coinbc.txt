@@ -1,0 +1,24 @@
+$ minizinc --solver COIN-BC --statistics assignment.mzn assignment.dzn
+% Generated FlatZinc statistics:
+%%%mzn-stat: paths=0
+%%%mzn-stat: flatIntVars=25
+%%%mzn-stat: flatIntConstraints=17
+%%%mzn-stat: method="minimize"
+%%%mzn-stat: flatTime=0.0663179
+%%%mzn-stat-end
+%%%mzn-stat: objective=13
+%%%mzn-stat: nodes=0
+%%%mzn-stat: solveTime=0.0012
+%%%mzn-stat-end
+assignment: [2, 1, 3, 4]
+total cost: 13
+----------
+==========
+%%%mzn-stat: objective=13
+%%%mzn-stat: objectiveBound=13
+%%%mzn-stat: nodes=0
+%%%mzn-stat: openNodes=-1
+%%%mzn-stat: solveTime=0.0012
+%%%mzn-stat-end
+%%%mzn-stat: nSolutions=1
+%%%mzn-stat-end

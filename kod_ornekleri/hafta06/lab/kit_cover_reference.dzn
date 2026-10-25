@@ -1,0 +1,8 @@
+n_stations = 4;
+n_kits = 5;
+covers = [| true,  true,  false, false
+          | false, true,  true,  false
+          | false, false, true,  true
+          | true,  false, false, true
+          | true,  false, true,  false |];
+cost = [5, 3, 4, 7, 4];
