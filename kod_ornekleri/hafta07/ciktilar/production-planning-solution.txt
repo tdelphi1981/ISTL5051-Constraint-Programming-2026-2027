@@ -1,0 +1,40 @@
+Restricted license - for non-production use only - expires 2026-11-23
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (mac64[arm] - Darwin 25.6.0 25G83)
+
+CPU model: Apple M3 Max
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 2 rows, 3 columns and 6 nonzeros
+Model fingerprint: 0x32f57863
+Variable types: 0 continuous, 3 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  Objective range  [2e+01, 4e+01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [4e+01, 6e+01]
+Found heuristic solution: objective 540.0000000
+Presolve time: 0.00s
+Presolved: 2 rows, 3 columns, 6 nonzeros
+Variable types: 0 continuous, 3 integer (0 binary)
+
+Root relaxation: objective 6.285714e+02, 3 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  628.57143    0    2  540.00000  628.57143  16.4%     -    0s
+H    0     0                     600.0000000  628.57143  4.76%     -    0s
+H    0     0                     620.0000000  628.57143  1.38%     -    0s
+     0     0  628.57143    0    2  620.00000  628.57143  1.38%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 620 600 540 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.200000000000e+02, best bound 6.200000000000e+02, gap 0.0000%
+P1: 9.0
+P2: 0.0
+P3: 13.0
+Total profit: 620.0
