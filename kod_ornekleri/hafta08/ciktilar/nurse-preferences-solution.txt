@@ -1,0 +1,5 @@
+Status: OPTIMAL
+N1: Mon:off  Tue:morning
+N2: Mon:morning  Tue:off
+N3: Mon:evening  Tue:evening
+Total penalty: 2

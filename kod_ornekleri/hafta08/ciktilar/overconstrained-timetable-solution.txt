@@ -1,0 +1,7 @@
+Status: OPTIMAL
+T1: morning
+T2: afternoon
+T3: morning
+T4: afternoon
+T5: morning
+Total violations: 1

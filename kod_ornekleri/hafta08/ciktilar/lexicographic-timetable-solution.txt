@@ -1,0 +1,7 @@
+Stage 1 optimal total violations: 1
+Stage 2 optimal afternoon count (violations pinned at 1): 2
+T1: morning
+T2: morning
+T3: morning
+T4: afternoon
+T5: afternoon

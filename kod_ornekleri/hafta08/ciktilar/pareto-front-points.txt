@@ -1,0 +1,17 @@
+All candidates (violations, afternoon_count):
+  (1, 2) <- Pareto front
+  (1, 3)
+  (2, 1) <- Pareto front
+  (2, 2)
+  (2, 3)
+  (2, 4)
+  (3, 1)
+  (3, 4)
+  (4, 0) <- Pareto front
+  (4, 2)
+  (4, 3)
+  (4, 5)
+Pareto front:
+  (1, 2)
+  (2, 1)
+  (4, 0)
