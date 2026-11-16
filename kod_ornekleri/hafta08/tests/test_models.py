@@ -13,6 +13,7 @@ from ortools.sat.python import cp_model
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "modeller"))
 
 import lexicographic_timetable  # noqa: E402
+import nurse_fairness  # noqa: E402
 import nurse_preferences  # noqa: E402
 import overconstrained_timetable  # noqa: E402
 import pareto_front_demo  # noqa: E402
@@ -73,3 +74,9 @@ def test_all_models_report_optimal_status() -> None:
     assert total >= 0
     solver, _, _ = nurse_preferences.solve()
     assert solver.StatusName() == "OPTIMAL"
+
+
+def test_nurse_minmax_then_total_tiebreak() -> None:
+    m_star, total = nurse_fairness.solve()
+    assert m_star == 2
+    assert total == 2

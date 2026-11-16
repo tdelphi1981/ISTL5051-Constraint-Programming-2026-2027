@@ -11,14 +11,16 @@ hafta06/
 ├── requirements.txt          same pins as Week 1 (ortools, minizinc==0.10.0,
 │                              gurobipy, pytest) — no new Python package this week
 ├── minizinc/
-│   ├── knapsack.mzn/.dzn      0/1 knapsack (Unit 1's running example)
+│   ├── kp01.mzn/.dzn          0/1 knapsack (Unit 1's running example; not
+│   │                          named knapsack.mzn, which is a stdlib global)
 │   ├── nqueens.mzn/.dzn       N-queens rewritten in MiniZinc (Unit 2's flattening example)
 │   └── assignment.mzn/.dzn    the assignment problem (Unit 3's solver-independence example)
 ├── modeller/
 │   └── minizinc_python.py     Unit 4's running example: drives MiniZinc from Python
 ├── ciktilar/                  real, captured solver output (never fabricated)
-│   ├── knapsack-gecode.txt
+│   ├── kp01-gecode.txt
 │   ├── nqueens-flatzinc-excerpt.txt
+│   ├── nqueens-flatzinc-highs-counts.txt
 │   ├── assignment-gecode.txt
 │   ├── assignment-coinbc.txt
 │   ├── assignment-gurobi.txt
@@ -73,7 +75,7 @@ From this directory, using the course's shared virtual environment
 ../.venv/bin/python -m pytest -q
 
 # run a MiniZinc model directly on Gecode
-minizinc --solver Gecode minizinc/knapsack.mzn minizinc/knapsack.dzn
+minizinc --solver Gecode minizinc/kp01.mzn minizinc/kp01.dzn
 
 # compile (flatten) a model without solving it
 minizinc --compile -o /tmp/nqueens.fzn --solver Gecode minizinc/nqueens.mzn minizinc/nqueens.dzn
@@ -85,8 +87,8 @@ minizinc --compile -o /tmp/nqueens.fzn --solver Gecode minizinc/nqueens.mzn mini
 To regenerate the captured outputs in `ciktilar/`:
 
 ```bash
-minizinc --solver Gecode minizinc/knapsack.mzn minizinc/knapsack.dzn \
-    > ciktilar/knapsack-gecode.txt
+minizinc --solver Gecode minizinc/kp01.mzn minizinc/kp01.dzn \
+    > ciktilar/kp01-gecode.txt
 minizinc --solver Gecode --statistics minizinc/assignment.mzn minizinc/assignment.dzn \
     > ciktilar/assignment-gecode.txt
 minizinc --solver COIN-BC --statistics minizinc/assignment.mzn minizinc/assignment.dzn \
@@ -94,13 +96,19 @@ minizinc --solver COIN-BC --statistics minizinc/assignment.mzn minizinc/assignme
 minizinc --solver HiGHS --statistics minizinc/assignment.mzn minizinc/assignment.dzn \
     > ciktilar/assignment-highs.txt
 ../.venv/bin/python modeller/minizinc_python.py > ciktilar/minizinc-python-run.txt
+# Gecode vs HiGHS FlatZinc constraint counts (run in a scratch copy of minizinc/)
+minizinc -c -o nqueens.fzn --solver Gecode nqueens.mzn nqueens.dzn
+minizinc -c -o nqueens-highs.fzn --solver HiGHS nqueens.mzn nqueens.dzn
+grep -c "^constraint" nqueens.fzn nqueens-highs.fzn
 ```
 
 ## Notes — solver inventory in this environment (real, verified)
 
 `minizinc --solvers` on this machine (MiniZinc 2.10.1, Homebrew) lists
-Gecode plus three MIP backend *configurations* — Gurobi, HiGHS, COIN-BC.
-Three of the four listed targets actually solve here; Gurobi does not:
+eight configurations; the four that matter are Gecode 6.5.0 plus three MIP
+backend *configurations* — Gurobi, HiGHS, COIN-BC (the others are Gecode
+Gist and unconfigured CPLEX/SCIP/Xpress placeholders). Three of these four
+actually solve here; Gurobi does not:
 
 | Solver | Registered? | Actually solves? | Reason if not |
 |---|---|---|---|
@@ -122,16 +130,17 @@ particular backend is always available — this is why Gurobi shows up as
 normally.
 
 `nqueens.mzn` and `assignment.mzn` both `include "all_different.mzn";` —
-in MiniZinc 2.10, `all_different` is no longer auto-included and must be
-pulled in explicitly (or via the full `globals.mzn`).
+MiniZinc never auto-includes a global constraint, so `all_different` must
+be pulled in explicitly (or via the full `globals.mzn`); without it the
+compiler stops with `type error: no function or predicate with name
+'all_different' found`.
 
-`knapsack.mzn` compiles with a harmless warning
-(`included file "knapsack.mzn" overrides a global constraint file from
-the standard library`): the MiniZinc standard library ships its own
-`knapsack.mzn` global constraint, and the required file name for this
-week's model collides with it. The warning goes to stderr only, does not
-affect the solved output, and cannot be avoided without renaming the file
-away from the name this week's brief requires.
+The knapsack model is named `kp01.mzn`/`kp01.dzn`, not `knapsack.mzn`:
+the MiniZinc standard library ships its own `knapsack.mzn` global
+constraint, and a model file of that name shadows it, so MiniZinc 2.10
+prints a deprecation warning (`included file "knapsack.mzn" overrides a
+global constraint file from the standard library. This is deprecated.`)
+before every run. With the `kp01` name the run is warning-free.
 
 The flattened `all_different(q)` constraint in `nqueens.fzn` becomes
 `fzn_all_different_int(q)` (with an `fzn_` prefix, not the bare
@@ -142,6 +151,6 @@ assumed) — read from the real compiled file in
 ## Previous week
 
 `nqueens.mzn` rewrites the exact Week 1–4 N-queens CSP structure (columns
-plus both diagonals as `all_different`) in MiniZinc syntax; `knapsack.mzn`
+plus both diagonals as `all_different`) in MiniZinc syntax; `kp01.mzn`
 and `assignment.mzn` make their first appearance this week and are reused
 by Week 7's `gurobipy` models with the same cost data.

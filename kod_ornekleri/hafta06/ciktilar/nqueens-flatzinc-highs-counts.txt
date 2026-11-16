@@ -1,0 +1,10 @@
+$ minizinc --compile -o nqueens.fzn --solver Gecode nqueens.mzn nqueens.dzn
+$ minizinc --compile -o nqueens-highs.fzn --solver HiGHS nqueens.mzn nqueens.dzn
+$ grep -c "^constraint" nqueens.fzn nqueens-highs.fzn
+nqueens.fzn:15
+nqueens-highs.fzn:60
+$ grep "^constraint" nqueens-highs.fzn | cut -d"(" -f1 | sort | uniq -c
+  36 constraint int_lin_eq
+  24 constraint int_lin_le
+$ sed -n 2p nqueens-highs.fzn
+% Solver library: /opt/homebrew/Cellar/minizinc/2.10.1_1/share/minizinc/linear

@@ -104,8 +104,8 @@ varies slightly run to run; the branch/conflict counts do not).
 - **Social golfer's symmetry breaking is intentionally partial.** Week 1's
   grouping is fully canonicalized (golfer `g` starts in group `g //
   GROUP_SIZE`); for every other week the golfer with globally smallest id
-  is pinned to group 0 (one instance of "groups ordered by smallest
-  golfer id"); and weeks after week 1 are lexicographically ordered
+  is pinned to group 0 (only that one golfer is pinned; the groups are
+  not ordered further); and weeks after week 1 are lexicographically ordered
   against each other. This does not break every last redundant symmetry
   (e.g. groups 1 and 2 within a non-canonical week can still be relabeled
   against each other) — it is illustrative of the technique, not a

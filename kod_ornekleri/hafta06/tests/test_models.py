@@ -45,7 +45,7 @@ def test_knapsack_optimum_matches_brute_force() -> None:
     )
 
     solver = minizinc.Solver.lookup("gecode")
-    result = minizinc.Instance(solver, _load("knapsack.mzn", "knapsack.dzn")).solve()
+    result = minizinc.Instance(solver, _load("kp01.mzn", "kp01.dzn")).solve()
     assert result.solution.objective == best
 
 

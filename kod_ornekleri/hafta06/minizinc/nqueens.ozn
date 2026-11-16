@@ -1,3 +1,3 @@
-output let {array [int] of string: X_INTRODUCED_21_ = ["queen columns per row: "++format(q)++"\n"]} in (X_INTRODUCED_21_);
+output let {array [int] of string: X_INTRODUCED_338_ = ["queen columns per row: "++format(q)++"\n"]} in (X_INTRODUCED_338_);
 int: n = 6;
 array [1..n] of int: q;

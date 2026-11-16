@@ -83,9 +83,9 @@ def _add_lex_le(model: cp_model.CpModel, left: list, right: list) -> None:
 
 # BEGIN golfer_symmetry_breaking
 def add_symmetry_breaking(model: cp_model.CpModel, play) -> None:
-    """Week 1 fixed to a canonical grouping; groups within every other
-    week ordered by smallest golfer id; weeks after week 1 lexicographically
-    ordered against each other.
+    """Week 1 fixed to a canonical grouping; golfer 0 pinned to group 0
+    in every other week; weeks after week 1 lexicographically ordered
+    against each other.
     """
     for golfer in range(NUM_GOLFERS):
         model.Add(play[0, golfer, golfer // GROUP_SIZE] == 1)

@@ -1,4 +1,4 @@
-"""Unit 4's running example: load knapsack.mzn and nqueens.mzn, build one
+"""Unit 4's running example: load kp01.mzn and nqueens.mzn, build one
 Instance per solver (Gecode and this environment's MIP backends), solve
 each, and print a comparison table (solver, status, objective/solution,
 wall-clock time in milliseconds).
@@ -12,8 +12,8 @@ import minizinc
 MZN_DIR = Path(__file__).resolve().parent.parent / "minizinc"
 
 # BEGIN mzn_python_model
-knapsack_model = minizinc.Model(MZN_DIR / "knapsack.mzn")
-knapsack_model.add_file(MZN_DIR / "knapsack.dzn")
+knapsack_model = minizinc.Model(MZN_DIR / "kp01.mzn")
+knapsack_model.add_file(MZN_DIR / "kp01.dzn")
 nqueens_model = minizinc.Model(MZN_DIR / "nqueens.mzn")
 nqueens_model.add_file(MZN_DIR / "nqueens.dzn")
 # END mzn_python_model

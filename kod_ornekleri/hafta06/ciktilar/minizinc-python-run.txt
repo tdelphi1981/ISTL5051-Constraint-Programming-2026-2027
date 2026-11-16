@@ -1,14 +1,14 @@
 
 knapsack (n=4, capacity=7):
 solver     status                  time_ms  summary
-Gecode     OPTIMAL_SOLUTION         117.83  objective=9
-coin-bc    OPTIMAL_SOLUTION         220.22  objective=9
-highs      OPTIMAL_SOLUTION         221.70  objective=9
+Gecode     OPTIMAL_SOLUTION         155.41  objective=9
+coin-bc    OPTIMAL_SOLUTION         253.37  objective=9
+highs      OPTIMAL_SOLUTION         257.76  objective=9
 gurobi     unavailable                0.00    MIPGurobiWrapper runtime error:  No Gurobi license found (user tolgaberber, host Tolga-M3-MacBook-Pro.local, hostid 5f3bca5c, cores 16)
 
 nqueens (n=6):
 solver     status                  time_ms  summary
-Gecode     SATISFIED                125.09  solution found
-coin-bc    SATISFIED                238.88  solution found
-highs      SATISFIED                237.11  solution found
+Gecode     SATISFIED                156.14  solution found
+coin-bc    SATISFIED                280.82  solution found
+highs      SATISFIED                270.13  solution found
 gurobi     unavailable                0.00    MIPGurobiWrapper runtime error:  No Gurobi license found (user tolgaberber, host Tolga-M3-MacBook-Pro.local, hostid 5f3bca5c, cores 16)

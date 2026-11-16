@@ -13,12 +13,14 @@ hafta08/
 │   ├── overconstrained_timetable.py   five-talk, two-slot Max-CSP/WCSP instance
 │   ├── lexicographic_timetable.py     same instance, two-stage lexicographic solve
 │   ├── pareto_front_demo.py           enumerates all candidates, filters Pareto front
-│   └── nurse_preferences.py           3-nurse, 2-day soft-preference roster
+│   ├── nurse_preferences.py           3-nurse, 2-day soft-preference roster
+│   └── nurse_fairness.py              same roster, min-max penalty then total
 ├── ciktilar/                real, captured solver output (never fabricated)
 │   ├── overconstrained-timetable-solution.txt
 │   ├── lexicographic-timetable-solution.txt
 │   ├── pareto-front-points.txt
-│   └── nurse-preferences-solution.txt
+│   ├── nurse-preferences-solution.txt
+│   └── nurse-fairness-solution.txt
 └── tests/
     └── test_models.py       pytest gate for the week
 ```
@@ -37,6 +39,7 @@ From this directory, using the course's shared virtual environment
 ../.venv/bin/python modeller/lexicographic_timetable.py
 ../.venv/bin/python modeller/pareto_front_demo.py
 ../.venv/bin/python modeller/nurse_preferences.py
+../.venv/bin/python modeller/nurse_fairness.py
 ```
 
 To regenerate the captured outputs in `ciktilar/`:
@@ -50,6 +53,8 @@ To regenerate the captured outputs in `ciktilar/`:
     > ciktilar/pareto-front-points.txt
 ../.venv/bin/python modeller/nurse_preferences.py \
     > ciktilar/nurse-preferences-solution.txt
+../.venv/bin/python modeller/nurse_fairness.py \
+    > ciktilar/nurse-fairness-solution.txt
 ```
 
 All models use `solver.parameters.num_workers = 1` and a fixed
@@ -64,9 +69,10 @@ solution printed — is deterministic across runs.
   proven optimum is exactly 1 violation.
 - `lexicographic_timetable.py` imports `build_variables` and
   `add_violation_vars` from `overconstrained_timetable.py` and rebuilds a
-  fresh model for stage 2 (CP-SAT models cannot be mutated after solving
-  without side effects, so pinning `total_violations == v1_star` is done
-  on a new model instance, not the stage-1 model).
+  fresh model for stage 2 (a style choice for clarity: re-calling
+  `Minimize` on the stage-1 model after adding the pin
+  `total_violations == v1_star` would also work, and `nurse_fairness.py`
+  does exactly that).
 - `pareto_front_demo.py` reuses `build_variables` from
   `overconstrained_timetable.py` and Week 1 Unit 4's
   enumerate-all-solutions technique (`enumerate_all_solutions = True` with
@@ -78,10 +84,16 @@ solution printed — is deterministic across runs.
   the weighted objective (`N1`=3, `N2`=2, `N3`=1) routes both evening
   shifts to `N3`, the cheapest violation, for a proven-optimal total
   penalty of 2.
+- `nurse_fairness.py` reuses the same roster and builds one penalty
+  expression per nurse. An auxiliary integer variable `max_penalty` is
+  constrained to be at least every nurse's penalty and minimized (min-max
+  fairness, optimum 2). Two schedules tie at 2 (`[0, 2, 1]`, total 3, and
+  `[0, 0, 2]`, total 2), so a second stage pins `max_penalty == 2` on the
+  same model and minimizes the total, returning `[0, 0, 2]`.
 
 ## Notes
 
-- These four models are the last new CP-SAT content before Week 9's
+- These five models are the last new CP-SAT content before Week 9's
   Midterm 1 Review; they deliberately reuse Week 1's talk-scheduling
   instance and Week 1 Unit 4's enumeration technique, plus Week 7's
   `model.Minimize()`/`model.Maximize()` vocabulary carried over from
